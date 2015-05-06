@@ -17,10 +17,10 @@
     "errorhandler": "~1.0.0",
     "compression": "~1.0.1",
     "lodash": "~2.4.1",
-    "ejs": "~0.8.4",
+    "ejs": "~2.3.1",
     "mongoose": "~3.8.8",
-    "jsonwebtoken": "^0.3.0",
-    "express-jwt": "^0.1.3",
+    "jsonwebtoken": "^5.0.0",
+    "express-jwt": "^3.0.0",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "passport-facebook": "latest",
@@ -30,7 +30,7 @@
     "connect-mongo": "^0.4.1",
     "socket.io": "^1.0.6",
     "socket.io-client": "^1.0.6",
-    "socketio-jwt": "^2.0.2"
+    "socketio-jwt": "^4.0.0"
   },
   "repository": {
     "type": "git",
