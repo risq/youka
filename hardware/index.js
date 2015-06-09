@@ -9,7 +9,8 @@ var five = require("johnny-five"),
 	lamp,
 	powerLed,
     lcd,
-    sensor;
+    sensor1,
+    sensor2;
 
 board.on("ready", function() {
 
@@ -26,10 +27,11 @@ board.on("ready", function() {
   	lcd.cursor(1, 15).print(']');
 	
 
-	sensor = new SeatSensor('A0', 10, 500, 5000);
+	sensor1 = new SeatSensor('A0', 10, 500, 5000);
+	sensor2 = new SeatSensor('A1', 10, 500, 5000);
 
 	setInterval(function() {
-		sensor.update();
+		sensor1.update();
 
 		// powerLed.brightness(sensor.currentForce * 255 / 100);
 
@@ -44,14 +46,24 @@ board.on("ready", function() {
 		// 
 	}, 500)
 
-	sensor.on('sitting', function() {
+	sensor1.on('sitting', function() {
 		lamp.on();
-		lcd.cursor(0, 0).print('Lamp is ON ')
+		console.log('sensor1: sitting');
 	});
 
-	sensor.on('leaving', function() {
+	sensor1.on('leaving', function() {
 		lamp.off();
-		lcd.cursor(0, 0).print('Lamp is OFF')
+		console.log('sensor1: leaving');
+	});
+
+	sensor2.on('sitting', function() {
+		lamp.on();
+		console.log('sensor2: sitting');
+	});
+
+	sensor2.on('leaving', function() {
+		lamp.off();
+		console.log('sensor2: leaving');
 	});
 
 });
