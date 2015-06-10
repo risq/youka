@@ -43,11 +43,11 @@ p.update = function() {
 	if (!this.isSitting) {
 		if (this.currentForce > this.forceThreshold) {
 			if (!this.sitStartTime) {
-				console.log('Someone is sitting ?')
+				// console.log('Someone is sitting ?')
 				this.sitStartTime = Date.now();
 			} else {
 				if(Date.now() - this.sitStartTime > this.sitTimeThreshold) {
-					console.log('Sitting !');
+					// console.log('Sitting !');
 					this.sitStartTime = null;
 					this.isSitting = true;
 					this.emit('sitting');
@@ -59,11 +59,11 @@ p.update = function() {
 	} else {
 		if (this.currentForce < this.forceThreshold) {
 			if (!this.sitStartTime) {
-				console.log('Someone is leaving ?')
+				// console.log('Someone is leaving ?')
 				this.sitStartTime = Date.now();
 			} else {
 				if(Date.now() - this.sitStartTime > this.leaveTimeThreshold) {
-					console.log('Leaving !');
+					// console.log('Leaving !');
 					this.sitStartTime = null;
 					this.isSitting = false;
 					this.emit('leaving');

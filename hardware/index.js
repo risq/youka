@@ -27,8 +27,8 @@ board.on("ready", function() {
   	lcd.cursor(1, 15).print(']');
 	
 
-	sensor1 = new SeatSensor('A0', 10, 500, 5000);
-	sensor2 = new SeatSensor('A1', 10, 500, 5000);
+	sensor1 = new SeatSensor('A0', 10, 500, 1000);
+	sensor2 = new SeatSensor('A1', 10, 500, 1000);
 
 	setInterval(function() {
 		sensor1.update();
@@ -47,7 +47,9 @@ board.on("ready", function() {
 	}, 500)
 
 	sensor1.on('sitting', function() {
-		lamp.on();
+		if (sensor2.isSitting) {
+			lamp.on();
+		}
 		console.log('sensor1: sitting');
 	});
 
@@ -57,7 +59,9 @@ board.on("ready", function() {
 	});
 
 	sensor2.on('sitting', function() {
-		lamp.on();
+		if (sensor1.isSitting) {
+			lamp.on();
+		}
 		console.log('sensor2: sitting');
 	});
 
