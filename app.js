@@ -24,26 +24,14 @@ var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
 
-var io = require('socket.io')(server);
-
-io.on('connection', function (socket) {
-socket.emit('news', { hello: 'world' });
-	socket.on('my other event', function (data) {
-	  console.log(data);
-	});
-});
-
-// app.use(express.static(path.join(config.root, 'youka-client/dist')));
-// app.set('appPath', 'dist');
-// // app.use(morgan('dev'));
-// // app.use(errorHandler()); // Error handler - has to be last
+var sockets = require('./sockets')(server);
 
 // Start server
 server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
-
+setInterval(sockets.onSit, 5000);
 
 // Expose app
 exports = module.exports = app;

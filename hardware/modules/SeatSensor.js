@@ -1,9 +1,9 @@
 var five = require("johnny-five"),
-	util = require("util");
+	util = require("util"),
     eventEmitter = require('events').EventEmitter;
 
 
-SeatSensor = function (pin, forceThreshold, sitTimeThreshold, leaveTimeThreshold, log) {
+var SeatSensor = function (pin, forceThreshold, sitTimeThreshold, leaveTimeThreshold, log) {
 	this.forceThreshold = forceThreshold;
 	this.sitTimeThreshold  = sitTimeThreshold;
 	this.leaveTimeThreshold  = leaveTimeThreshold;
