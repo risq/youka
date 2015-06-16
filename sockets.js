@@ -19,8 +19,19 @@ function register(data) {
   })
 }
 
-function onSit() {
-  io.emit('sit');
+function onSit(seat) {
+  io.emit('sit', {
+    seat: seat
+  });
+}
+
+function debugSeat(req, res) {
+  console.log('DEBUG', req.params.id);
+  onSit(req.params.id);
+  res.json({ 
+    status: 'ok',
+    seat: req.params.id
+  });
 }
 
 module.exports = function(server) {
@@ -28,7 +39,8 @@ module.exports = function(server) {
   init(server);
 
   return {
-    onSit: onSit
+    onSit: onSit,
+    debugSeat: debugSeat
   }
 
 };

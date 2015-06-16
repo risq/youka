@@ -8,7 +8,6 @@ var five = require("johnny-five"),
 
 	lamp,
 	powerLed,
-    lcd,
     sensor1,
     sensor2;
 
@@ -18,32 +17,12 @@ board.on("ready", function() {
 
 	powerLed = new five.Led(3);
 
-	lcd = new five.LCD({ 
-		pins: [2, 4, 9, 10, 11, 12]
-  	});
-
-  	lcd.print('Lamp is OFF');
-  	lcd.cursor(1, 0).print('[');
-  	lcd.cursor(1, 15).print(']');
-	
-
 	sensor1 = new SeatSensor('A0', 10, 500, 1000);
 	sensor2 = new SeatSensor('A1', 10, 500, 1000);
 
 	setInterval(function() {
 		sensor1.update();
-
-		// powerLed.brightness(sensor.currentForce * 255 / 100);
-
-		// var bar = '',
-		// 	lcdValue = Math.round(sensor.currentForce * 14 / 100);
-
-		// for (var i = 0; i < 14; i++) {
-		// 	bar += (i < lcdValue) ? '=' : ' ';
-		// }
-
-		// lcd.cursor(1, 1).print(bar);
-		// 
+		sensor2.update();
 	}, 500)
 
 	sensor1.on('sitting', function() {

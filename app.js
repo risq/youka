@@ -22,16 +22,15 @@ if(config.seedDB) { require('./config/seed'); }
 var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
-require('./routes')(app);
 
 var sockets = require('./sockets')(server);
+
+require('./routes')(app, sockets);
 
 // Start server
 server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
-
-setInterval(sockets.onSit, 5000);
 
 // Expose app
 exports = module.exports = app;
