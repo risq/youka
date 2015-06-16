@@ -12,6 +12,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
 
+var hardware = require('./config/config.json').hardware;
+
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
@@ -26,7 +28,10 @@ require('./config/express')(app);
 var sockets = require('./sockets')(server);
 
 require('./routes')(app, sockets);
-require('./hardware')(sockets);
+
+if (hardware) {
+	require('./hardware')(sockets);
+}
 
 // Start server
 server.listen(config.port, config.ip, function () {
