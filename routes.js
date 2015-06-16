@@ -5,6 +5,7 @@
 'use strict';
 
 var errors = require('./components/errors');
+var config = require('./config/config.json')
 
 module.exports = function(app, sockets) {
 
@@ -21,6 +22,11 @@ module.exports = function(app, sockets) {
    .get(errors[404]);
 
   // All other routes should redirect to the index.html
+  app.route('/config.json')
+    .get(function(req, res) {
+      res.json(config);
+    });
+
   app.route('/index.html')
     .get(function(req, res) {
       res.sendfile(app.get('appPath') + '/index.html');
