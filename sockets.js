@@ -9,6 +9,7 @@ function init(server) {
 
   io.on('connection', function (socket) {
     socket.on('register', register);
+    socket.on('confirmSit', onClientConfirm);
   });
 }
 
@@ -19,11 +20,18 @@ function register(data) {
   })
 }
 
+function onClientConfirm(data) {
+  io.emit('cancelSitConfirm', {
+    seat: data.seat
+  });
+}
+
 function onSit(seat) {
-  io.emit('sit', {
+  io.emit('sitConfirm', {
     seat: seat
   });
 }
+
 
 function debugSeat(req, res) {
   console.log('DEBUG', req.params.id);
