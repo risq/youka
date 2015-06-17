@@ -2,28 +2,28 @@
 
 var socket = require('socket.io'),
     io,
-    clients = [];
+    clients = [],
+    seats = {
+      1: null,
+      2: null
+    };
 
 function init(server) {
   io = socket(server);
 
   io.on('connection', function (socket) {
-    socket.on('register', register);
     socket.on('confirmSit', onClientConfirm);
   });
 }
 
-function register(data) {
-  clients.push({
-    socket: this,
-    id: data.userId
-  })
-}
-
 function onClientConfirm(data) {
-  io.emit('cancelSitConfirm', {
-    seat: data.seat
-  });
+  console.log('onClientConfirm', data);
+  if (seats[data.seat] === null && data.userId) {
+    io.emit('sitConfirmed', {
+      seat: data.seat,
+      userId: data.userId
+    });
+  }
 }
 
 function onSit(seat) {
