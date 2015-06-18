@@ -9,6 +9,7 @@ var config = require('./config/config.json')
 
 module.exports = function(app, sockets) {
 
+  app.use('/debug/seat/:id/leave', sockets.debugSeatLeave);
   app.use('/debug/seat/:id', sockets.debugSeat);
   
   app.use('/api/things', require('./api/thing'));

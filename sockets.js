@@ -19,23 +19,46 @@ function init(server) {
 function onClientConfirm(data) {
   console.log('onClientConfirm', data);
   if (seats[data.seat] === null && data.userId) {
+    seats[data.seat] = data.userId;
     io.emit('sitConfirmed', {
       seat: data.seat,
-      userId: data.userId
+      userId: data.userId,
+      full: isFull()
     });
   }
 }
 
 function onSit(seat) {
-  io.emit('sitConfirm', {
+  if (seats[seat] === null) {
+    io.emit('sitConfirm', {
+      seat: seat
+    });
+  }
+}
+
+function onLeave(seat) {
+  seats[seat] = null;
+  io.emit('sitLeave', {
     seat: seat
   });
 }
 
+function isFull() {
+  return (seats[1] !== null && seats[2] !== null);
+}
 
 function debugSeat(req, res) {
-  console.log('DEBUG', req.params.id);
+  console.log('DEBUG - SEAT', req.params.id);
   onSit(req.params.id);
+  res.json({ 
+    status: 'ok',
+    seat: req.params.id
+  });
+}
+
+function debugSeatLeave(req, res) {
+  console.log('DEBUG - LEAVE SEAT', req.params.id);
+  onLeave(req.params.id);
   res.json({ 
     status: 'ok',
     seat: req.params.id
@@ -48,7 +71,9 @@ module.exports = function(server) {
 
   return {
     onSit: onSit,
-    debugSeat: debugSeat
+    onLeave: onLeave,
+    debugSeat: debugSeat,
+    debugSeatLeave: debugSeatLeave
   }
 
 };
