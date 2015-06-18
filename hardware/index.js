@@ -36,6 +36,7 @@ module.exports = function(sockets) {
 
 		sensor1.on('leaving', function() {
 			lamp.off();
+			sockets.onLeave(1);
 			console.log('sensor1: leaving');
 		});
 
@@ -49,6 +50,7 @@ module.exports = function(sockets) {
 
 		sensor2.on('leaving', function() {
 			lamp.off();
+			sockets.onLeave(1);
 			console.log('sensor2: leaving');
 		});
 
