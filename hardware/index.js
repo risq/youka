@@ -50,7 +50,7 @@ module.exports = function(sockets) {
 
 		sensor2.on('leaving', function() {
 			lamp.off();
-			sockets.onLeave(1);
+			sockets.onLeave(2);
 			console.log('sensor2: leaving');
 		});
 
