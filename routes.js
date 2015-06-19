@@ -11,6 +11,7 @@ module.exports = function(app, sockets) {
 
   app.use('/debug/seat/:id/leave', sockets.debugSeatLeave);
   app.use('/debug/seat/:id', sockets.debugSeat);
+  app.use('/debug/pump', sockets.debugPump);
   
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
