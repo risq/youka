@@ -7,14 +7,19 @@ module.exports = function(sockets) {
 	    	repl: false
 	    }),
 
+		ready = false,
 		lamp,
+		pump,
 		powerLed,
 	    sensor1,
 	    sensor2;
 
-	board.on("ready", function() {
+	board.on('ready', function() {
+
+		ready = true;
 
 		lamp = new five.Relay(5);
+		pump = new five.Relay(6);
 
 		powerLed = new five.Led(3);
 
@@ -55,5 +60,18 @@ module.exports = function(sockets) {
 		});
 
 	});
+
+	return {
+		pumpOn: function() {
+			if (ready) {
+				pump.on();
+			}
+		},
+		pumpOff: function() {
+			if (ready) {
+				pump.off();
+			}
+		},
+	}
 
 }

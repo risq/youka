@@ -27,11 +27,12 @@ require('./config/express')(app);
 
 var sockets = require('./sockets')(server);
 
-require('./routes')(app, sockets);
 
 if (hardware) {
 	require('./hardware')(sockets);
 }
+
+require('./routes')(app, sockets);
 
 // Start server
 server.listen(config.port, config.ip, function () {

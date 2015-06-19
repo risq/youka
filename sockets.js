@@ -1,6 +1,7 @@
 'use strict';
 
 var socket = require('socket.io'),
+    hardware,
     io,
     clients = [],
     seats = {
@@ -8,8 +9,10 @@ var socket = require('socket.io'),
       2: null
     };
 
-function init(server) {
+function init(server, hardwareInterface) {
   io = socket(server);
+
+  hardware = hardwareInterface || null;
 
   io.on('connection', function (socket) {
     socket.on('confirmSit', onClientConfirm);
@@ -19,12 +22,17 @@ function init(server) {
 function onClientConfirm(data) {
   console.log('onClientConfirm', data);
   if (seats[data.seat] === null && data.userId) {
+    var peerId = seats[1] || seats[2];
     seats[data.seat] = data.userId;
     io.emit('sitConfirmed', {
       seat: data.seat,
       userId: data.userId,
-      full: isFull()
+      full: isFull(),
+      peerId: peerId
     });
+    if (isFull() && hardware) {
+      hardware.pumpOn();
+    }
   }
 }
 
@@ -41,6 +49,9 @@ function onLeave(seat) {
   io.emit('sitLeave', {
     seat: seat
   });
+  if (hardware) {
+      hardware.pumpOff();
+    }
 }
 
 function isFull() {
@@ -65,9 +76,9 @@ function debugSeatLeave(req, res) {
   });
 }
 
-module.exports = function(server) {
+module.exports = function(server, hardware) {
 
-  init(server);
+  init(server, hardware);
 
   return {
     onSit: onSit,
