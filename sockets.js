@@ -9,10 +9,8 @@ var socket = require('socket.io'),
       2: null
     };
 
-function init(server, hardwareInterface) {
+function init(server) {
   io = socket(server);
-
-  hardware = hardwareInterface || null;
 
   io.on('connection', function (socket) {
     socket.on('confirmSit', onClientConfirm);
@@ -93,16 +91,21 @@ function debugPump(req, res) {
   }
 }
 
-module.exports = function(server, hardware) {
+function setHardwareInterface(hardwareInterface) {
+  hardware = hardwareInterface;
+}
 
-  init(server, hardware);
+module.exports = function(server) {
+
+  init(server);
 
   return {
     onSit: onSit,
     onLeave: onLeave,
     debugSeat: debugSeat,
     debugSeatLeave: debugSeatLeave,
-    debugPump: debugPump
+    debugPump: debugPump,
+    setHardwareInterface: setHardwareInterface
   }
 
 };
