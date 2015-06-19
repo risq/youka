@@ -25,12 +25,13 @@ var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
 
-var sockets = require('./sockets')(server);
-
+var hardwareInterface;
 
 if (hardware) {
-	require('./hardware')(sockets);
-}
+	hardwareInterface = require('./hardware')(sockets);
+} 
+
+var sockets = require('./sockets')(server, hardwareInterface);
 
 require('./routes')(app, sockets);
 
