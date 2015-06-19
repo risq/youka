@@ -76,6 +76,23 @@ function debugSeatLeave(req, res) {
   });
 }
 
+function debugPump(req, res) {
+  console.log('DEBUG - PUMP');
+  if (hardware) {
+    hardware.pumpOn();
+    setTimeout(function() {
+      hardware.pumpOff();
+    }, 5000);
+    res.json({ 
+      status: 'ok',
+    });
+  } else {
+    res.json({ 
+      status: 'no hardware',
+    });
+  }
+}
+
 module.exports = function(server, hardware) {
 
   init(server, hardware);
@@ -84,7 +101,8 @@ module.exports = function(server, hardware) {
     onSit: onSit,
     onLeave: onLeave,
     debugSeat: debugSeat,
-    debugSeatLeave: debugSeatLeave
+    debugSeatLeave: debugSeatLeave,
+    debugPump: debugPump
   }
 
 };

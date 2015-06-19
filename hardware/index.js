@@ -64,11 +64,13 @@ module.exports = function(sockets) {
 	return {
 		pumpOn: function() {
 			if (ready) {
+				console.log('turning pump on');
 				pump.on();
 			}
 		},
 		pumpOff: function() {
 			if (ready) {
+				console.log('turning pump off');
 				pump.off();
 			}
 		},
