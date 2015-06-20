@@ -11,7 +11,7 @@ var User = require('../api/user/user.model');
 User.find({}).remove(function() {
   User.create({
     provider: 'local',
-    name: 'Test User1',
+    name: 'Mathieu',
     email: 'test1@test.com',
     password: 'test',
     age: 28,
@@ -22,10 +22,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h1.jpg'
   }, {
     provider: 'local',
-    name: 'Test User2',
+    name: 'Océanne',
     email: 'test2@test.com',
     password: 'test',
     age: 28,
@@ -36,10 +36,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f1.jpg'
   }, {
     provider: 'local',
-    name: 'Test User3',
+    name: 'Antoine',
     email: 'test3@test.com',
     password: 'test',
     age: 28,
@@ -50,10 +50,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h2.jpg'
   }, {
     provider: 'local',
-    name: 'Test User4',
+    name: 'Alex',
     email: 'test4@test.com',
     password: 'test',
     age: 28,
@@ -64,10 +64,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h3.jpg'
   }, {
     provider: 'local',
-    name: 'Test User5',
+    name: 'Clara',
     email: 'test5@test.com',
     password: 'test',
     age: 28,
@@ -78,10 +78,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f2.jpg'
   }, {
     provider: 'local',
-    name: 'Test User6',
+    name: 'Chloé',
     email: 'test6@test.com',
     password: 'test',
     age: 28,
@@ -92,10 +92,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f3.jpg'
   }, {
     provider: 'local',
-    name: 'Test User7',
+    name: 'Nathan',
     email: 'test7@test.com',
     password: 'test',
     age: 28,
@@ -106,10 +106,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h4.jpg'
   }, {
     provider: 'local',
-    name: 'Test User8',
+    name: 'Aurélie',
     email: 'test8@test.com',
     password: 'test',
     age: 28,
@@ -120,10 +120,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f4.jpg'
   }, {
     provider: 'local',
-    name: 'Test User9',
+    name: 'Emilie',
     email: 'test9@test.com',
     password: 'test',
     age: 28,
@@ -134,10 +134,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f5.jpg'
   }, {
     provider: 'local',
-    name: 'Test User10',
+    name: 'Samuel',
     email: 'test10@test.com',
     password: 'test',
     age: 28,
@@ -148,10 +148,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h5.jpg'
   }, {
     provider: 'local',
-    name: 'Test User11',
+    name: 'Emma',
     email: 'test11@test.com',
     password: 'test',
     age: 28,
@@ -162,10 +162,10 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/f6.jpg'
   }, {
     provider: 'local',
-    name: 'Test User12',
+    name: 'Victor',
     email: 'test12@test.com',
     password: 'test',
     age: 28,
@@ -176,11 +176,11 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h6.jpg'
   }, {
     provider: 'local',
     role: 'admin',
-    name: 'Admin',
+    name: 'Jérémy',
     email: 'admin@admin.com',
     password: 'admin',
     age: 28,
@@ -191,7 +191,7 @@ User.find({}).remove(function() {
     address: '11 Avenue des Tulipes, 74000 Annecy',
     telephone: '0684503920',
     description: 'Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.',
-    img: 'http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif'
+    img: '/assets/images/users/h7.jpg'
   }, function() {
       console.log('finished populating users');
     }
