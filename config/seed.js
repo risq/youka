@@ -177,6 +177,21 @@ User.find({}).remove(function() {
     telephone: '0694382910',
     description: 'Je fais du piano et de la basse depuis que je suis petit : vous ne le savez peut être pas mais j\'ai mon propre groupe de musique. On fait souvent des petites tournées le weekend dans des bars locaux. D\'ailleurs, je suis à la recherche d\'une chanteuse : si l\'une d\'entre vous est intéressée mesdames ou mesdemoiselles faites-le savoir ^^.',
     img: '/assets/images/users/h7.jpg'
+  }, {
+    provider: 'local',
+    role: 'admin',
+    name: 'Jérémy',
+    email: 'admin@admin.com',
+    password: 'admin',
+    age: 38,
+    experience: 4,
+    position: 'Développeur',
+    specialities: 'Informatique - Code - Php MySqL - Javascript - Wordpress',
+    birthDate: '2 Janvier 1977',
+    address: '1 Rue du Pont, 74000 Annecy',
+    telephone: '0674392027',
+    description: 'Je suis Jérémy et j\'adore le code. J\'aime bien regarder des tutos sur Youtube et les reproduire après chez moi, dans mes projets et mes réalisations. Sinon j\'adore préparer des bons petits plats à ma copine Vathana : on aime beaucoup les plats mexicains et cubains. On fait aussi de la salsa ensemble au Barco Latino, un bar qui propose des musiques latines où on peut danser toute la nuit.',
+    img: '/assets/images/users/h8.jpg'
   }, function() {
       console.log('finished populating users');
     }
