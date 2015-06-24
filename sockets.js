@@ -74,13 +74,52 @@ function debugSeatLeave(req, res) {
   });
 }
 
-function debugPump(req, res) {
-  console.log('DEBUG - PUMP');
+function debugPumpOn(req, res) {
+  console.log('DEBUG - PUMP ON');
   if (hardware) {
     hardware.pumpOn();
-    setTimeout(function() {
-      hardware.pumpOff();
-    }, 5000);
+    res.json({ 
+      status: 'ok',
+    });
+  } else {
+    res.json({ 
+      status: 'no hardware',
+    });
+  }
+}
+
+function debugPumpOff(req, res) {
+  console.log('DEBUG - PUMP ON');
+  if (hardware) {
+    hardware.pumpOff();
+    res.json({ 
+      status: 'ok',
+    });
+  } else {
+    res.json({ 
+      status: 'no hardware',
+    });
+  }
+}
+
+function debugLampOn(req, res) {
+  console.log('DEBUG - PUMP ON');
+  if (hardware) {
+    hardware.lampOn();
+    res.json({ 
+      status: 'ok',
+    });
+  } else {
+    res.json({ 
+      status: 'no hardware',
+    });
+  }
+}
+
+function debugLampOff(req, res) {
+  console.log('DEBUG - PUMP ON');
+  if (hardware) {
+    hardware.lampOff();
     res.json({ 
       status: 'ok',
     });
@@ -104,7 +143,10 @@ module.exports = function(server) {
     onLeave: onLeave,
     debugSeat: debugSeat,
     debugSeatLeave: debugSeatLeave,
-    debugPump: debugPump,
+    debugLampOn: debugLampOn,
+    debugLampOff: debugLampOff,
+    debugPumpOn: debugPumpOn,
+    debugPumpOff: debugPumpOff,
     setHardwareInterface: setHardwareInterface
   }
 

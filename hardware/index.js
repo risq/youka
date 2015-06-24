@@ -74,6 +74,18 @@ module.exports = function(sockets) {
 				pump.off();
 			}
 		},
+		lampOn: function() {
+			if (ready) {
+				console.log('turning lamp on');
+				lamp.on();
+			}
+		},
+		lampOff: function() {
+			if (ready) {
+				console.log('turning lamp off');
+				lamp.off();
+			}
+		},
 	}
 
 }
