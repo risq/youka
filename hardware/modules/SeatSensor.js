@@ -12,13 +12,13 @@ var SeatSensor = function (pin, forceThreshold, sitTimeThreshold, leaveTimeThres
 	this.sitStartTime = null;
 	this.currentForce = 0;
 
-    this.sensor = new five.Sensor({
+        this.sensor = new five.Sensor({
 		pin: pin,
-		freq: 100
+		freq: 250
 	});
 
 
-	this.sensor.on('change', this.onChange.bind(this));
+	this.sensor.on('data', this.onChange.bind(this));
 }
 
 util.inherits(SeatSensor, eventEmitter);

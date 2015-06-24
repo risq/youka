@@ -23,13 +23,13 @@ module.exports = function(sockets) {
 
 		powerLed = new five.Led(3);
 
-		sensor1 = new SeatSensor('A0', 10, 500, 1000);
-		sensor2 = new SeatSensor('A1', 10, 500, 1000);
+		sensor1 = new SeatSensor('A0', 15, 500, 1200);
+		sensor2 = new SeatSensor('A1', 20, 500, 1200);
 
 		setInterval(function() {
 			sensor1.update();
 			sensor2.update();
-		}, 500)
+		}, 600)
 
 		sensor1.on('sitting', function() {
 			if (sensor2.isSitting) {
