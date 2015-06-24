@@ -89,7 +89,7 @@ function debugPumpOn(req, res) {
 }
 
 function debugPumpOff(req, res) {
-  console.log('DEBUG - PUMP ON');
+  console.log('DEBUG - PUMP OFF');
   if (hardware) {
     hardware.pumpOff();
     res.json({ 
@@ -103,7 +103,7 @@ function debugPumpOff(req, res) {
 }
 
 function debugLampOn(req, res) {
-  console.log('DEBUG - PUMP ON');
+  console.log('DEBUG - LAMP ON');
   if (hardware) {
     hardware.lampOn();
     res.json({ 
@@ -117,7 +117,7 @@ function debugLampOn(req, res) {
 }
 
 function debugLampOff(req, res) {
-  console.log('DEBUG - PUMP ON');
+  console.log('DEBUG - LAMP OFF');
   if (hardware) {
     hardware.lampOff();
     res.json({ 
